@@ -7,6 +7,19 @@
 </head>
 <body>
 <script>
+  const keysPressed = [];
+  const cheatcode ='aspirine';
+  function checkCode(a){
+    keysPressed.push(a.key);
+    keysPressed.splice(-cheatcode.length -1, keysPressed.length - cheatcode.length);
+    if(keysPressed.join('').includes(cheatcode)){
+      console.log('You now have FULL HEALTH');
+      cornify_add();
+    }
+
+  }
+
+  window.addEventListener('keyup', e => checkCode(e));
 </script>
 </body>
 </html>
